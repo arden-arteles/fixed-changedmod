@@ -8,9 +8,9 @@
       <Price locationtype="military" multiplier="1.25" minavailable="0" />
       <Price locationtype="mine" multiplier="1" minavailable="0" />
     </Price>
-    <Sprite texture="%ModDir%/Items/Crystall.png" depth="0" sourcerect="0,0,31,31" origin="0,0" />
+    <Sprite texture="%ModDir%/Items/latex_crystal.png" depth="0" sourcerect="0,0,31,31" origin="0,0" />
     <Deconstruct time="0"></Deconstruct>
-    <InventoryIcon texture="%ModDir%/Items/Crystall.png" sourcerect="0,0,31,31" origin="0.5,0.5" />
+    <InventoryIcon texture="%ModDir%/Items/latex_crystal.png" sourcerect="0,0,31,31" origin="0.5,0.5" />
     <Body width="60" height="12" density="50" />
     <MeleeWeapon slots="Any,RightHand,LeftHand" aimpos="40,5" handle1="-10,-5" holdangle="60" reload="0.25" range="50" combatpriority="7" msg="ItemMsgPickUpSelect">
       <Attack structuredamage="2" itemdamage="2" stun="0.2" targetimpulse="2">
