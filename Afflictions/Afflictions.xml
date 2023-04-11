@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Afflictions>
+  <AfflictionHusk name="Процесс трансфурмации" identifier="transfurwhite" description="Тело пациента покрывают липкие белые пятна." type="alieninfection" targets="human" huskedspeciesname="[speciesname]whitelatex" causeofdeathdescription="Трансфурирован" selfcauseofdeathdescription="Вы обрели новое тело и поддались инстинктам, скоро от вашего разума ничего не останеться." limbspecific="false" indicatorlimb="Torso" activationthreshold="0" showiconthreshold="40" karmachangeonapplied="-1" maxstrength="100" iconcolors="60,140,195,255;60,107,195,255;60,0,195,255">
+    <Effect minstrength="0" maxstrength="100" maxvitalitydecrease="0" strengthchange="10" />
+    <icon texture="Content/UI/MainIconsAtlas.png" sourcerect="0,640,128,128" color="60,107,195,255" origin="0,0" />
+  </AfflictionHusk>
+  <AfflictionHusk name="Процесс трансфурмации" identifier="transfurdark" description="Тело пациента покрывают липкие темные пятна." type="alieninfection" targets="human" huskedspeciesname="[speciesname]darklatex" causeofdeathdescription="Трансфурирован" selfcauseofdeathdescription="Вы обрели новое тело и поддались инстинктам, скоро от вашего разума ничего не останеться." limbspecific="false" indicatorlimb="Torso" activationthreshold="0" showiconthreshold="40" karmachangeonapplied="-1" maxstrength="300" iconcolors="60,140,195,255;60,107,195,255;60,0,195,255">
+    <Effect minstrength="0" maxstrength="100" maxvitalitydecrease="0" strengthchange="10" />
+    <icon texture="Content/UI/MainIconsAtlas.png" sourcerect="0,640,128,128" color="60,107,195,255" origin="0,0" />
+  </AfflictionHusk>
+  <Affliction name="Устойчивость к трансфурмации" identifier="transfurresistance" description="На время вы неуязвимы к воздействию латекса любого типа." type="resistance" isbuff="true" limbspecific="false" maxstrength="600">
+    <Effect minstrength="0" maxstrength="600" strengthchange="-1" resistancefor="transfurwhite,transfurdark" minresistance="1" maxresistance="100" />
+    <icon texture="Content/UI/MainIconsAtlas.png" sourcerect="384,896,128,128" color="10,193,114,255" origin="0,0" />
+  </Affliction>
+</Afflictions>

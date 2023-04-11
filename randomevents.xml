@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+EventSet
+  chooserandom                = true/false. If true, one of the events in the set is chosen randomly, otherwise all of them are used.
+  eventcount                  = how many random events to choose if chooserandom is set to true.
+  mindistancetraveled         = 0-1. How large portion of the level must the submarine traverse before the event can be activated.
+  minmissiontime              = How many seconds must have passed before the event can be activated. Note that the event activates 
+                                if either mindistancetraveled OR minmissiontime is reached. If you want to make the event purely 
+                                time-based or only distance-based, you can set the distance or time limit to a very high value.
+  minintensity, maxintensity  = 0-1. Eventmanager's intensity value must be within this range for the event to be activated. 
+                                Use the minintensity value to prevent the event from occurring when intensity is low (i.e. when there's
+                                no immediate danger or much going on in the sub), and the maxintensity value to prevent activating 
+                                additional events if there crew is already in trouble.
+  ignorecooldown =            = true/false (defaults to false, or the setting of the parent event set if used in a child set).
+                                If true, the global event cooldowns configured in the event manager settings are ignored.
+  allowatstart                = true/false (defaults to false). Can the event be activated when the submarine hasn't left the start outpost.
+  perruin                     = true/false (defaults to false). If true, the event set is applied for each alien ruin in the level.
+  perwreck                    = true/false (defaults to false). If true, the event set is applied for each wreck in the level.
+  
+Any type of event 
+  musictype               = a music tag that matches a value defined in the sound config (e.g. monster, deep, flooded, levelend, ruins...)
+  commonness              = Used for making some events more probable than others when the set is defined to choose randomTechnically the weight of a weighted random.
+  
+MonsterEvent 
+  characterfile           = the identifier of the monster to spawn
+  amount                  = how many of the monster to spawn
+  minamount, maxamount    = use to configure a random number of monsters to spawn
+  spawntype               = MainPath, Cave, Ruin. Where to spawn the monster(s).
+  spawndeep               = true/false. When set to true, the monster spawns below the level.
+  spawnprobability        = 0-1. How likely is it that this event spawns any creatures.
+  scatter                 = default 1000, max 3000. How far the monsters on a single spawn point are scattered/spread around the point. In pixels.
+  offset                  = Use to offset some of the monsters farther from the spawn point than others. The direction is calculated from the waypoints towards the next outpost (in the main path). In pixels.
+-->
+<Randomevents>
+  <EventSet minleveldifficulty="20" maxleveldifficulty="100" chooserandom="false" allowatstart="true">
+    <!-- Populate the wrecks. -->
+    <EventSet identifier="wreck" chooserandom="false" allowatstart="true" perwreck="true" triggereventcooldown="false">
+      <MonsterEvent characterfile="%ModDir%/Characters/WhiteLatex1/WhiteLatex1.xml" minamount="5" maxamount="15" spawntype="wreck" probability="0.3" />
+    </EventSet>
+    <EventSet identifier="wreck" chooserandom="false" allowatstart="true" perwreck="true" triggereventcooldown="false">
+      <MonsterEvent characterfile="%ModDir%/Characters/DarkLatex1/DarkLatex1.xml" minamount="5" maxamount="15" spawntype="wreck" probability="0.2" />
+    </EventSet>
+    <!-- Distance events -->
+    <!-- Pass 30% (avg event threat = 30)-->
+    <EventSet chooserandom="true" mindistancetraveled="0.30" minmissiontime="100000" minintensity="0.0" maxintensity="0.15">
+      <EventSet chooserandom="true" commonness="60">
+        <MonsterEvent characterfile="%ModDir%/Characters/WhiteLatex1/WhiteLatex1.xml" minamount="15" maxamount="45" spawntype="mainpath" />
+      </EventSet>
+      <EventSet chooserandom="false" commonness="40">
+        <MonsterEvent characterfile="%ModDir%/Characters/DarkLatex1/DarkLatex1.xml" minamount="15" maxamount="45" spawntype="sidepath" />
+      </EventSet>
+    </EventSet>
+    <!-- Timed events -->
+    <!-- Trigger at 390 seconds if intensity is under 0.15 (avg event threat = 30)-->
+    <EventSet chooserandom="true" mindistancetraveled="1.0" minmissiontime="390" minintensity="0.0" maxintensity="0.15" allowatstart="false">
+      <EventSet chooserandom="true" commonness="60">
+        <MonsterEvent characterfile="%ModDir%/Characters/WhiteLatex1/WhiteLatex1.xml" minamount="15" maxamount="45" spawntype="mainpath" />
+      </EventSet>
+      <EventSet chooserandom="false" commonness="40">
+        <MonsterEvent characterfile="%ModDir%/Characters/DarkLatex1/DarkLatex1.xml" minamount="15" maxamount="45" spawntype="sidepath" />
+      </EventSet>
+    </EventSet>
+  </EventSet>
+</Randomevents>

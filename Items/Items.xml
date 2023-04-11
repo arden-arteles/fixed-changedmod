@@ -1,0 +1,345 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Items>
+  <Item name="Кристалл черного латекса" identifier="DaLaCr" category="Equipment" maxstacksize="1" Tags="smallitem,tool" cargocontaineridentifier="metalcrate" Scale="0.5" impactsoundtag="impact_metal_light">
+    <Price baseprice="250">
+      <Price locationtype="outpost" multiplier="1" minavailable="1" />
+      <Price locationtype="city" multiplier="0.9" minavailable="3" />
+      <Price locationtype="research" multiplier="1.5" minavailable="5" />
+      <Price locationtype="military" multiplier="1.25" minavailable="0" />
+      <Price locationtype="mine" multiplier="1" minavailable="0" />
+    </Price>
+    <Sprite texture="%ModDir%/Items/Crystall.png" depth="0" sourcerect="0,0,31,31" origin="0,0" />
+    <Deconstruct time="0"></Deconstruct>
+    <InventoryIcon texture="%ModDir%/Items/Crystall.png" sourcerect="0,0,31,31" origin="0.5,0.5" />
+    <Body width="60" height="12" density="50" />
+    <MeleeWeapon slots="Any,RightHand,LeftHand" aimpos="40,5" handle1="-10,-5" holdangle="60" reload="0.25" range="50" combatpriority="7" msg="ItemMsgPickUpSelect">
+      <Attack structuredamage="2" itemdamage="2" stun="0.2" targetimpulse="2">
+        <Affliction identifier="lacerations" strength="5" />
+        <Affliction identifier="bleeding" strength="2" />
+        <Sound file="%ModDir%/Characters/WhiteLatex1/Sounds/Poison.ogg" selectionmode="random" range="500" />
+      </Attack>
+    </MeleeWeapon>
+    <aitarget sightrange="500" soundrange="250" fadeouttime="1" />
+    <Upgrade gameversion="0.10.0.0" scale="0.5" />
+  </Item>
+  <Latexide name="Латексид" identifier="latexide" category="Material" maxstacksize="8" cargocontaineridentifier="mediccrate" Tags="smallitem,chem,medical,syringe" description="Этот препарат используется при заражении латексом. ПРИМИЧАНИЕ: ИСПОЛЬЗОВАТЬ БЫСТРО И ОПЕРАТИВНО СРАЗУ ПОСЛЕ ЗАРАЖЕНИЯ!!!" useinhealthinterface="true" scale="0.5" impactsoundtag="impact_metal_light">
+    <Upgrade gameversion="0.10.0.0" scale="0.5" />
+    <PreferredContainer primary="wreckmedcab" minamount="0" maxamount="4" spawnprobability="0.5" />
+    <Price baseprice="750">
+      <Price locationtype="outpost" multiplier="1" minavailable="1" />
+      <Price locationtype="city" multiplier="0.9" minavailable="1" />
+      <Price locationtype="research" multiplier="0.9" minavailable="5" />
+      <Price locationtype="military" multiplier="1.1" minavailable="3" />
+      <Price locationtype="mine" multiplier="1.1" minavailable="2" />
+    </Price>
+    <Fabricate suitablefabricators="medicalfabricator" requiredtime="30">
+      <RequiredSkill identifier="medical" level="35" />
+      <RequiredItem identifier="DaLaCr" />
+      <RequiredItem identifier="antibiotics" />
+      <RequiredItem identifier="stabilozine" />
+    </Fabricate>
+    <Deconstruct time="20">
+      <Item identifier="antibiotics" copycondition="true" mincondition="0.1" />
+      <Item identifier="stabilozine" copycondition="true" mincondition="0.1" />
+    </Deconstruct>
+    <SuitableTreatment identifier="transfurwhite,transfurdark" suitability="40" />
+    <InventoryIcon texture="Content/Items/InventoryIconAtlas.png" sourcerect="897,449,63,63" origin="0.5,0.5" />
+    <Sprite texture="Content/Items/Medical/Medicines.png" sourcerect="112,0,38,69" depth="0.6" origin="0.5,0.5" />
+    <Body width="35" height="70" density="20" />
+    <MeleeWeapon canBeCombined="true" removeOnCombined="true" slots="Any,RightHand,LeftHand" aimpos="5,0" handle1="-5,0" holdangle="220" reload="1.0" msg="ItemMsgPickUpSelect">
+      <StatusEffect type="OnFailure" target="This" Condition="-100.0" disabledeltatime="true">
+        <Sound file="Content/Items/Medical/Syringe.ogg" range="500" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="This" Condition="-100.0" disabledeltatime="true">
+        <Sound file="Content/Items/Medical/Syringe.ogg" range="500" />
+      </StatusEffect>
+      <RequiredSkill identifier="medical" level="38" />
+      <StatusEffect tags="medical" type="OnUse" target="Character" duration="1">
+        <Conditional huskinfection="lt 100.0" />
+        <ReduceAffliction identifier="transfurwhite" amount="100" />
+      </StatusEffect>
+      <StatusEffect tags="medical" type="OnUse" target="Character" duration="1">
+        <Conditional huskinfection="lt 100.0" />
+        <ReduceAffliction identifier="transfurdark" amount="100" />
+      </StatusEffect>
+      <StatusEffect tags="medical" type="OnFailure" target="Character" duration="1">
+        <Conditional huskinfection="lt 100.0" />
+        <ReduceAffliction identifier="transfurwhite" amount="60" />
+      </StatusEffect>
+      <StatusEffect tags="medical" type="OnFailure" target="Character" duration="1">
+        <Conditional huskinfection="lt 100.0" />
+        <ReduceAffliction identifier="transfurdark" amount="60" />
+      </StatusEffect>
+      <StatusEffect tags="medical,latexide" type="OnUse" target="Character" duration="10.0">
+        <!-- Injecting a still-conscious Husk will only piss it off and kill the "conscious" faster -->
+        <Conditional huskinfection="eq 100.0" />
+        <Affliction identifier="organdamage" amount="0.2" />
+      </StatusEffect>
+      <StatusEffect tags="medical,latexide" type="OnUse" target="Character" duration="10.0" comparison="or">
+        <Conditional IsHusk="true" />
+        <Affliction identifier="organdamage" amount="0.2" />
+      </StatusEffect>
+      <!-- Remove the item when fully used -->
+      <StatusEffect type="OnBroken" target="This">
+        <Remove />
+      </StatusEffect>
+      <RequiredSkill identifier="medical" level="25" />
+      <StatusEffect type="OnFailure" target="This" Condition="-100.0" disabledeltatime="true" />
+      <StatusEffect type="OnUse" target="This" Condition="-100.0" disabledeltatime="true" />
+      <StatusEffect tags="medical" type="OnUse" target="Character" duration="60.0">
+        <Sound file="Content/Items/Medical/Syringe.ogg" range="500" />
+        <Conditional huskinfection="lt 100.0" />
+        <ReduceAffliction identifier="transfurwhite" amount="0.5" />
+      </StatusEffect>
+      <StatusEffect tags="medical" type="OnUse" target="Character" duration="60.0">
+        <Sound file="Content/Items/Medical/Syringe.ogg" range="500" />
+        <Conditional huskinfection="lt 100.0" />
+        <ReduceAffliction identifier="transfurdark" amount="0.5" />
+      </StatusEffect>
+      <StatusEffect tags="medical" type="OnUse" target="Limb" duration="60.0">
+        <Affliction identifier="organdamage" amount="0.25" />
+      </StatusEffect>
+      <StatusEffect tags="medical" type="OnUse" target="Character" disabledeltatime="true">
+        <Sound file="Content/Items/Medical/Syringe.ogg" range="500" />
+        <Affliction identifier="transfurresistance" amount="600" />
+      </StatusEffect>
+      <StatusEffect tags="medical" type="OnFailure" target="Character" duration="60.0">
+        <Conditional huskinfection="lt 100.0" />
+        <ReduceAffliction identifier="transfurresistance" amount="0.25" />
+      </StatusEffect>
+      <StatusEffect tags="medical" type="OnFailure" target="Limb" duration="60.0">
+        <Affliction identifier="organdamage" amount="0.2" />
+      </StatusEffect>
+      <StatusEffect tags="medical" type="OnFailure" target="Character" disabledeltatime="true">
+        <Sound file="Content/Items/Medical/Syringe.ogg" range="500" />
+        <Affliction identifier="transfurresistance" amount="300" />
+      </StatusEffect>
+      <!-- Remove the item when fully used -->
+      <StatusEffect type="OnBroken" target="This">
+        <Remove />
+      </StatusEffect>
+    </MeleeWeapon>
+    <Projectile characterusable="false" launchimpulse="20.0" sticktocharacters="true" launchrotation="-90">
+      <StatusEffect type="OnImpact" target="This" Condition="-100.0" disabledeltatime="true">
+        <Sound file="Content/Items/Medical/Syringe.ogg" range="500" />
+      </StatusEffect>
+      <StatusEffect tags="medical,latexide" type="OnImpact" target="Character">
+        <Conditional huskinfection="lt 100.0" />
+        <ReduceAffliction identifier="transfurwhite" amount="40" />
+      </StatusEffect>
+      <StatusEffect tags="medical,latexide" type="OnImpact" target="Character">
+        <Conditional huskinfection="lt 100.0" />
+        <ReduceAffliction identifier="transfurdark" amount="40" />
+      </StatusEffect>
+      <StatusEffect tags="medical,latexide" type="OnImpact" target="Character" duration="10.0">
+        <!-- Injecting a still-conscious Husk will only piss it off and kill the "conscious" faster -->
+        <Conditional huskinfection="eq 100.0" />
+        <Affliction identifier="organdamage" amount="0.2" />
+      </StatusEffect>
+      <StatusEffect tags="medical,latexide" type="OnImpact" target="Character" duration="10.0">
+        <Conditional SpeciesName="husk" />
+        <Affliction identifier="organdamage" amount="0.2" />
+      </StatusEffect>
+    </Projectile>
+  </Latexide>
+  <Item name="Шлем протогена" identifier="protogenhelmet" category="Equipment" tags="smallitem,clothing" cargocontaineridentifier="metalcrate" description="" scale="0">
+    <PreferredContainer primary="crewcab" minamount="0" maxamount="1" spawnprobability="0.125" />
+    <PreferredContainer primary="outpostcrewcabinet" minamount="1" maxamount="1" spawnprobability="0.125" />
+    <Price baseprice="500">
+      <Price locationtype="outpost" multiplier="1" minavailable="0" />
+      <Price locationtype="city" multiplier="0.9" minavailable="0" />
+      <Price locationtype="research" multiplier="1" minavailable="0" />
+      <Price locationtype="military" multiplier="1" minavailable="0" />
+      <Price locationtype="mine" multiplier="1" minavailable="0" />
+    </Price>
+    <Deconstruct time="10" />
+    <InventoryIcon name="Protogen Helmet" texture="%ModDir%/Items/protogenhelmet.png" sourcerect="0,0,128,128" origin="0.5,0.5" />
+    <Sprite name="Protogen Helmet" texture="%ModDir%/Items/protogenhelmet.png" depth="0.6" sourcerect="0,0,102,94" origin="0.5,0.5" />
+    <Body width="75" height="50" density="30" />
+    <Wearable limbtype="Head" slots="Any,Head" msg="ItemMsgPickUpSelect">
+      <damagemodifier afflictionidentifiers="transfurdark,transfurwhite" armorsector="0.0,360.0" damagemultiplier="0" />
+      <sprite name="Protogen Helmet Wearable" texture="%ModDir%/Items/protogenhelmet.png" limb="Head" inheritlimbdepth="true" inherittexturescale="true" hidelimb="true" sourcerect="0,0,128,128" origin="0.5,0.5" />
+    </Wearable>
+  </Item>
+  <!-- UNIFORMS START -->
+  <Item name="Костюм протогена ассистента" identifier="protogensuitassistant" category="Equipment" tags="smallitem,clothing" fireproof="false" cargocontaineridentifier="metalcrate" description="" scale="0.5" impactsoundtag="impact_soft">
+    <Price baseprice="1500">
+      <Price locationtype="outpost" multiplier="1" minavailable="0" />
+      <Price locationtype="city" multiplier="0.9" minavailable="0" />
+      <Price locationtype="research" multiplier="1" minavailable="0" />
+      <Price locationtype="military" multiplier="1" minavailable="0" />
+      <Price locationtype="mine" multiplier="1" minavailable="0" />
+    </Price>
+    <Deconstruct time="10" />
+    <InventoryIcon name="Protogen Suit  Assistant Icon" texture="%ModDir%/Items/protogensuit_ass_icon.png" sourcerect="0,0,128,128" origin="0.5,0.5" />
+    <Sprite name="Protogen Suit Assistant" texture="%ModDir%/Items/protogensuitassdrop.png" sourcerect="0,0,256,100" depth="0.6" origin="0.5,0.5" />
+    <Body width="180" height="50" density="30" friction="0.8" restitution="0.01" />
+    <Wearable slots="Any,InnerClothes" msg="ItemMsgPickUpSelect">
+      <sprite name="Protogen Suit Assistant Torso" texture="%ModDir%/Items/protogensuit_ass.png" limb="Torso" hidelimb="true" inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
+      <sprite name="Protogen Suit Assistant Left Arm" texture="%ModDir%/Items/protogensuit_ass.png" limb="LeftArm" hidelimb="true" inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
+      <sprite name="Protogen Suit Assistant Right Arm" texture="%ModDir%/Items/protogensuit_ass.png" limb="RightArm" hidelimb="true" inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
+      <sprite name="Protogen Suit Assistant Left Arm" texture="%ModDir%/Items/protogensuit_ass.png" limb="LeftForearm" hidelimb="true" inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
+      <sprite name="Protogen Suit Assistant Right Arm" texture="%ModDir%/Items/protogensuit_ass.png" limb="RightForearm" hidelimb="true" inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
+      <sprite name="Protogen Suit Assistant Right Lower Arm" texture="%ModDir%/Items/protogensuit_ass.png" limb="RightHand" hidelimb="false" inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
+      <sprite name="Protogen Suit Assistant Left Lower Arm" texture="%ModDir%/Items/protogensuit_ass.png" limb="LeftHand" hidelimb="false" inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
+      <sprite name="Protogen Suit Assistant Waist" texture="%ModDir%/Items/protogensuit_ass.png" limb="Waist" hidelimb="true" inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
+      <sprite name="Protogen Suit Assistant Right Thigh" texture="%ModDir%/Items/protogensuit_ass.png" limb="RightThigh" hidelimb="true" inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
+      <sprite name="Protogen Suit Assistant Left Thigh" texture="%ModDir%/Items/protogensuit_ass.png" limb="LeftThigh" hidelimb="true" inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
+      <sprite name="Protogen Suit Assistant Right Leg" texture="%ModDir%/Items/protogensuit_ass.png" limb="RightLeg" hidelimb="true" inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
+      <sprite name="Protogen Suit Assistant Left Leg" texture="%ModDir%/Items/protogensuit_ass.png" limb="LeftLeg" hidelimb="true" inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
+      <sprite name="Protogen Suit Assistant Right Shoe" texture="%ModDir%/Items/protogensuit_ass.png" limb="RightFoot" hidelimb="true" inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
+      <sprite name="Protogen Suit Assistant Left Shoe" texture="%ModDir%/Items/protogensuit_ass.png" limb="LeftFoot" hidelimb="true" inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
+      <damagemodifier afflictionidentifiers="transfurdark,transfurwhite" armorsector="0.0,360.0" damagemultiplier="0" />
+    </Wearable>
+  </Item>
+  <Item name="Костюм протогена механика" identifier="protogensuitmech" category="Equipment" tags="smallitem,clothing" fireproof="false" cargocontaineridentifier="metalcrate" description="" scale="0.5" impactsoundtag="impact_soft">
+    <Price baseprice="1500">
+      <Price locationtype="outpost" multiplier="1" minavailable="0" />
+      <Price locationtype="city" multiplier="0.9" minavailable="0" />
+      <Price locationtype="research" multiplier="1" minavailable="0" />
+      <Price locationtype="military" multiplier="1" minavailable="0" />
+      <Price locationtype="mine" multiplier="1" minavailable="0" />
+    </Price>
+    <Deconstruct time="10" />
+    <InventoryIcon name="Protogen Suit  Mechanic Icon" texture="%ModDir%/Items/protogensuit_mech_icon.png" sourcerect="0,0,128,128" origin="0.5,0.5" />
+    <Sprite name="Protogen Suit Mechanic" texture="%ModDir%/Items/protogensuitmechdrop.png" sourcerect="0,0,256,100" depth="0.6" origin="0.5,0.5" />
+    <Body width="180" height="50" density="30" friction="0.8" restitution="0.01" />
+    <Wearable slots="Any,InnerClothes" msg="ItemMsgPickUpSelect">
+      <sprite name="Protogen Suit Mechanic Torso" texture="%ModDir%/Items/protogensuit_mech.png" limb="Torso" hidelimb="true" inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
+      <sprite name="Protogen Suit Mechanic Left Arm" texture="%ModDir%/Items/protogensuit_mech.png" limb="LeftArm" hidelimb="true" inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
+      <sprite name="Protogen Suit Mechanic Right Arm" texture="%ModDir%/Items/protogensuit_mech.png" limb="RightArm" hidelimb="true" inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
+      <sprite name="Protogen Suit Mechanic Left Arm" texture="%ModDir%/Items/protogensuit_mech.png" limb="LeftForearm" hidelimb="true" inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
+      <sprite name="Protogen Suit Mechanic Right Arm" texture="%ModDir%/Items/protogensuit_mech.png" limb="RightForearm" hidelimb="true" inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
+      <sprite name="Protogen Suit Mechanic Right Lower Arm" texture="%ModDir%/Items/protogensuit_mech.png" limb="RightHand" hidelimb="false" inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
+      <sprite name="Protogen Suit Mechanic Left Lower Arm" texture="%ModDir%/Items/protogensuit_mech.png" limb="LeftHand" hidelimb="false" inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
+      <sprite name="Protogen Suit Mechanic Waist" texture="%ModDir%/Items/protogensuit_mech.png" limb="Waist" hidelimb="true" inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
+      <sprite name="Protogen Suit Mechanic Right Thigh" texture="%ModDir%/Items/protogensuit_mech.png" limb="RightThigh" hidelimb="true" inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
+      <sprite name="Protogen Suit Mechanic Left Thigh" texture="%ModDir%/Items/protogensuit_mech.png" limb="LeftThigh" hidelimb="true" inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
+      <sprite name="Protogen Suit Mechanic Right Leg" texture="%ModDir%/Items/protogensuit_mech.png" limb="RightLeg" hidelimb="true" inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
+      <sprite name="Protogen Suit Mechanic Left Leg" texture="%ModDir%/Items/protogensuit_mech.png" limb="LeftLeg" hidelimb="true" inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
+      <sprite name="Protogen Suit Mechanic Right Shoe" texture="%ModDir%/Items/protogensuit_mech.png" limb="RightFoot" hidelimb="true" inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
+      <sprite name="Protogen Suit Mechanic Left Shoe" texture="%ModDir%/Items/protogensuit_mech.png" limb="LeftFoot" hidelimb="true" inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
+      <damagemodifier afflictionidentifiers="transfurdark,transfurwhite" armorsector="0.0,360.0" damagemultiplier="0" />
+    </Wearable>
+  </Item>
+  <Item name="Костюм протогена инженера" identifier="protogensuitengi" category="Equipment" tags="smallitem,clothing" fireproof="false" cargocontaineridentifier="metalcrate" description="" scale="0.5" impactsoundtag="impact_soft">
+    <Price baseprice="1500">
+      <Price locationtype="outpost" multiplier="1" minavailable="0" />
+      <Price locationtype="city" multiplier="0.9" minavailable="0" />
+      <Price locationtype="research" multiplier="1" minavailable="0" />
+      <Price locationtype="military" multiplier="1" minavailable="0" />
+      <Price locationtype="mine" multiplier="1" minavailable="0" />
+    </Price>
+    <Deconstruct time="10" />
+    <InventoryIcon name="Protogen Suit  Engineer Icon" texture="%ModDir%/Items/protogensuit_engi_icon.png" sourcerect="0,0,128,128" origin="0.5,0.5" />
+    <Sprite name="Protogen Suit Engineer" texture="%ModDir%/Items/protogensuitengidrop.png" sourcerect="0,0,256,100" depth="0.6" origin="0.5,0.5" />
+    <Body width="180" height="50" density="30" friction="0.8" restitution="0.01" />
+    <Wearable slots="Any,InnerClothes" msg="ItemMsgPickUpSelect">
+      <sprite name="Protogen Suit Engineer Torso" texture="%ModDir%/Items/protogensuit_engi.png" limb="Torso" hidelimb="true" inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
+      <sprite name="Protogen Suit Engineer Left Arm" texture="%ModDir%/Items/protogensuit_engi.png" limb="LeftArm" hidelimb="true" inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
+      <sprite name="Protogen Suit Engineer Right Arm" texture="%ModDir%/Items/protogensuit_engi.png" limb="RightArm" hidelimb="true" inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
+      <sprite name="Protogen Suit Engineer Left Arm" texture="%ModDir%/Items/protogensuit_engi.png" limb="LeftForearm" hidelimb="true" inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
+      <sprite name="Protogen Suit Engineer Right Arm" texture="%ModDir%/Items/protogensuit_engi.png" limb="RightForearm" hidelimb="true" inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
+      <sprite name="Protogen Suit Engineer Right Lower Arm" texture="%ModDir%/Items/protogensuit_engi.png" limb="RightHand" hidelimb="false" inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
+      <sprite name="Protogen Suit Engineer Left Lower Arm" texture="%ModDir%/Items/protogensuit_engi.png" limb="LeftHand" hidelimb="false" inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
+      <sprite name="Protogen Suit Engineer Waist" texture="%ModDir%/Items/protogensuit_engi.png" limb="Waist" hidelimb="true" inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
+      <sprite name="Protogen Suit Engineer Right Thigh" texture="%ModDir%/Items/protogensuit_engi.png" limb="RightThigh" hidelimb="true" inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
+      <sprite name="Protogen Suit Engineer Left Thigh" texture="%ModDir%/Items/protogensuit_engi.png" limb="LeftThigh" hidelimb="true" inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
+      <sprite name="Protogen Suit Engineer Right Leg" texture="%ModDir%/Items/protogensuit_engi.png" limb="RightLeg" hidelimb="true" inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
+      <sprite name="Protogen Suit Engineer Left Leg" texture="%ModDir%/Items/protogensuit_engi.png" limb="LeftLeg" hidelimb="true" inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
+      <sprite name="Protogen Suit Engineer Right Shoe" texture="%ModDir%/Items/protogensuit_engi.png" limb="RightFoot" hidelimb="true" inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
+      <sprite name="Protogen Suit Engineer Left Shoe" texture="%ModDir%/Items/protogensuit_engi.png" limb="LeftFoot" hidelimb="true" inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
+      <damagemodifier afflictionidentifiers="transfurdark,transfurwhite" armorsector="0.0,360.0" damagemultiplier="0" />
+    </Wearable>
+  </Item>
+  <Item name="Костюм протогена врача" identifier="protogensuitmed" category="Equipment" tags="smallitem,clothing" fireproof="false" cargocontaineridentifier="metalcrate" description="" scale="0.5" impactsoundtag="impact_soft">
+    <Price baseprice="1500">
+      <Price locationtype="outpost" multiplier="1" minavailable="0" />
+      <Price locationtype="city" multiplier="0.9" minavailable="0" />
+      <Price locationtype="research" multiplier="1" minavailable="0" />
+      <Price locationtype="military" multiplier="1" minavailable="0" />
+      <Price locationtype="mine" multiplier="1" minavailable="0" />
+    </Price>
+    <Deconstruct time="10" />
+    <InventoryIcon name="Protogen Suit  Medic Icon" texture="%ModDir%/Items/protogensuit_med_icon.png" sourcerect="0,0,128,128" origin="0.5,0.5" />
+    <Sprite name="Protogen Suit Medic" texture="%ModDir%/Items/protogensuitmeddrop.png" sourcerect="0,0,256,100" depth="0.6" origin="0.5,0.5" />
+    <Body width="180" height="50" density="30" friction="0.8" restitution="0.01" />
+    <Wearable slots="Any,InnerClothes" msg="ItemMsgPickUpSelect">
+      <sprite name="Protogen Suit Medic Torso" texture="%ModDir%/Items/protogensuit_med.png" limb="Torso" hidelimb="true" inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
+      <sprite name="Protogen Suit Medic Left Arm" texture="%ModDir%/Items/protogensuit_med.png" limb="LeftArm" hidelimb="true" inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
+      <sprite name="Protogen Suit Medic Right Arm" texture="%ModDir%/Items/protogensuit_med.png" limb="RightArm" hidelimb="true" inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
+      <sprite name="Protogen Suit Medic Left Arm" texture="%ModDir%/Items/protogensuit_med.png" limb="LeftForearm" hidelimb="true" inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
+      <sprite name="Protogen Suit Medic Right Arm" texture="%ModDir%/Items/protogensuit_med.png" limb="RightForearm" hidelimb="true" inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
+      <sprite name="Protogen Suit Medic Right Lower Arm" texture="%ModDir%/Items/protogensuit_med.png" limb="RightHand" hidelimb="false" inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
+      <sprite name="Protogen Suit Medic Left Lower Arm" texture="%ModDir%/Items/protogensuit_med.png" limb="LeftHand" hidelimb="false" inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
+      <sprite name="Protogen Suit Medic Waist" texture="%ModDir%/Items/protogensuit_med.png" limb="Waist" hidelimb="true" inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
+      <sprite name="Protogen Suit Medic Right Thigh" texture="%ModDir%/Items/protogensuit_med.png" limb="RightThigh" hidelimb="true" inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
+      <sprite name="Protogen Suit Medic Left Thigh" texture="%ModDir%/Items/protogensuit_med.png" limb="LeftThigh" hidelimb="true" inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
+      <sprite name="Protogen Suit Medic Right Leg" texture="%ModDir%/Items/protogensuit_med.png" limb="RightLeg" hidelimb="true" inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
+      <sprite name="Protogen Suit Medic Left Leg" texture="%ModDir%/Items/protogensuit_med.png" limb="LeftLeg" hidelimb="true" inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
+      <sprite name="Protogen Suit Medic Right Shoe" texture="%ModDir%/Items/protogensuit_med.png" limb="RightFoot" hidelimb="true" inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
+      <sprite name="Protogen Suit Medic Left Shoe" texture="%ModDir%/Items/protogensuit_med.png" limb="LeftFoot" hidelimb="true" inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
+      <damagemodifier afflictionidentifiers="transfurdark,transfurwhite" armorsector="0.0,360.0" damagemultiplier="0" />
+    </Wearable>
+  </Item>
+  <Item name="Костюм протогена офицера" identifier="protogensuitsb" category="Equipment" tags="smallitem,clothing" fireproof="false" cargocontaineridentifier="metalcrate" description="" scale="0.5" impactsoundtag="impact_soft">
+    <Price baseprice="1500">
+      <Price locationtype="outpost" multiplier="1" minavailable="0" />
+      <Price locationtype="city" multiplier="0.9" minavailable="0" />
+      <Price locationtype="research" multiplier="1" minavailable="0" />
+      <Price locationtype="military" multiplier="1" minavailable="0" />
+      <Price locationtype="mine" multiplier="1" minavailable="0" />
+    </Price>
+    <Deconstruct time="10" />
+    <InventoryIcon name="Protogen Suit  Officer Icon" texture="%ModDir%/Items/protogensuit_sb_icon.png" sourcerect="0,0,128,128" origin="0.5,0.5" />
+    <Sprite name="Protogen Suit Officer" texture="%ModDir%/Items/protogensuitsbdrop.png" sourcerect="0,0,256,100" depth="0.6" origin="0.5,0.5" />
+    <Body width="180" height="50" density="30" friction="0.8" restitution="0.01" />
+    <Wearable slots="Any,InnerClothes" msg="ItemMsgPickUpSelect">
+      <sprite name="Protogen Suit Officer Torso" texture="%ModDir%/Items/protogensuit_sb.png" limb="Torso" hidelimb="true" inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
+      <sprite name="Protogen Suit Officer Left Arm" texture="%ModDir%/Items/protogensuit_sb.png" limb="LeftArm" hidelimb="true" inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
+      <sprite name="Protogen Suit Officer Right Arm" texture="%ModDir%/Items/protogensuit_sb.png" limb="RightArm" hidelimb="true" inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
+      <sprite name="Protogen Suit Officer Left Arm" texture="%ModDir%/Items/protogensuit_sb.png" limb="LeftForearm" hidelimb="true" inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
+      <sprite name="Protogen Suit Officer Right Arm" texture="%ModDir%/Items/protogensuit_sb.png" limb="RightForearm" hidelimb="true" inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
+      <sprite name="Protogen Suit Officer Right Lower Arm" texture="%ModDir%/Items/protogensuit_sb.png" limb="RightHand" hidelimb="false" inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
+      <sprite name="Protogen Suit Officer Left Lower Arm" texture="%ModDir%/Items/protogensuit_sb.png" limb="LeftHand" hidelimb="false" inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
+      <sprite name="Protogen Suit Officer Waist" texture="%ModDir%/Items/protogensuit_sb.png" limb="Waist" hidelimb="true" inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
+      <sprite name="Protogen Suit Officer Right Thigh" texture="%ModDir%/Items/protogensuit_sb.png" limb="RightThigh" hidelimb="true" inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
+      <sprite name="Protogen Suit Officer Left Thigh" texture="%ModDir%/Items/protogensuit_sb.png" limb="LeftThigh" hidelimb="true" inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
+      <sprite name="Protogen Suit Officer Right Leg" texture="%ModDir%/Items/protogensuit_sb.png" limb="RightLeg" hidelimb="true" inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
+      <sprite name="Protogen Suit Officer Left Leg" texture="%ModDir%/Items/protogensuit_sb.png" limb="LeftLeg" hidelimb="true" inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
+      <sprite name="Protogen Suit Officer Right Shoe" texture="%ModDir%/Items/protogensuit_sb.png" limb="RightFoot" hidelimb="true" inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
+      <sprite name="Protogen Suit Officer Left Shoe" texture="%ModDir%/Items/protogensuit_sb.png" limb="LeftFoot" hidelimb="true" inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
+      <damagemodifier afflictionidentifiers="transfurdark,transfurwhite" armorsector="0.0,360.0" damagemultiplier="0" />
+    </Wearable>
+  </Item>
+  <Item name="Костюм протогена капитана" identifier="protogensuitcap" category="Equipment" tags="smallitem,clothing" fireproof="false" cargocontaineridentifier="metalcrate" description="" scale="0.5" impactsoundtag="impact_soft">
+    <Price baseprice="1500">
+      <Price locationtype="outpost" multiplier="1" minavailable="0" />
+      <Price locationtype="city" multiplier="0.9" minavailable="0" />
+      <Price locationtype="research" multiplier="1" minavailable="0" />
+      <Price locationtype="military" multiplier="1" minavailable="0" />
+      <Price locationtype="mine" multiplier="1" minavailable="0" />
+    </Price>
+    <Deconstruct time="10" />
+    <InventoryIcon name="Protogen Suit  Captain Icon" texture="%ModDir%/Items/protogensuit_cap_icon.png" sourcerect="0,0,128,128" origin="0.5,0.5" />
+    <Sprite name="Protogen Suit" texture="%ModDir%/Items/protogensuitcapdrop.png" sourcerect="0,0,256,100" depth="0.6" origin="0.5,0.5" />
+    <Body width="180" height="50" density="30" friction="0.8" restitution="0.01" />
+    <Wearable slots="Any,InnerClothes" msg="ItemMsgPickUpSelect">
+      <sprite name="Protogen Suit Captain Torso" texture="%ModDir%/Items/protogensuit_cap.png" limb="Torso" hidelimb="true" inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
+      <sprite name="Protogen Suit Captain Left Arm" texture="%ModDir%/Items/protogensuit_cap.png" limb="LeftArm" hidelimb="true" inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
+      <sprite name="Protogen Suit Captain Right Arm" texture="%ModDir%/Items/protogensuit_cap.png" limb="RightArm" hidelimb="true" inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
+      <sprite name="Protogen Suit Captain Left Arm" texture="%ModDir%/Items/protogensuit_cap.png" limb="LeftForearm" hidelimb="true" inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
+      <sprite name="Protogen Suit Captain Right Arm" texture="%ModDir%/Items/protogensuit_cap.png" limb="RightForearm" hidelimb="true" inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
+      <sprite name="Protogen Suit Captain Right Lower Arm" texture="%ModDir%/Items/protogensuit_cap.png" limb="RightHand" hidelimb="false" inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
+      <sprite name="Protogen Suit Captain Left Lower Arm" texture="%ModDir%/Items/protogensuit_cap.png" limb="LeftHand" hidelimb="false" inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
+      <sprite name="Protogen Suit Captain Waist" texture="%ModDir%/Items/protogensuit_cap.png" limb="Waist" hidelimb="true" inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
+      <sprite name="Protogen Suit Captain Right Thigh" texture="%ModDir%/Items/protogensuit_cap.png" limb="RightThigh" hidelimb="true" inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
+      <sprite name="Protogen Suit Captain Left Thigh" texture="%ModDir%/Items/protogensuit_cap.png" limb="LeftThigh" hidelimb="true" inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
+      <sprite name="Protogen Suit Captain Right Leg" texture="%ModDir%/Items/protogensuit_cap.png" limb="RightLeg" hidelimb="true" inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
+      <sprite name="Protogen Suit Captain Left Leg" texture="%ModDir%/Items/protogensuit_cap.png" limb="LeftLeg" hidelimb="true" inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
+      <sprite name="Protogen Suit Captain Right Shoe" texture="%ModDir%/Items/protogensuit_cap.png" limb="RightFoot" hidelimb="true" inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
+      <sprite name="Protogen Suit Captain Left Shoe" texture="%ModDir%/Items/protogensuit_cap.png" limb="LeftFoot" hidelimb="true" inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
+      <damagemodifier afflictionidentifiers="transfurdark,transfurwhite" armorsector="0.0,360.0" damagemultiplier="0" />
+    </Wearable>
+  </Item>
+</Items>

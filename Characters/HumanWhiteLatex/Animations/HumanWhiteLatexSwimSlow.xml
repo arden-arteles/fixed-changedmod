@@ -1,0 +1,2 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Wlh1SwimSlow movementspeed="1.429391" steertorque="25" headangle="42.5" torsoangle="1" legmoveamount="0.15628877" handmoveamount="0.64002347,0.1983907" handmoveoffset="0,0" handcyclespeed="2.5600939" legcyclelength="8.0442" cyclespeed="1.429391" animationtype="SwimSlow" footangle="-118" footrotatestrength="5" handmovestrength="0.5999999" type="Wlh1" />
