@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<contentpackage name="[EN] ChangedMod" corepackage="false" modversion="1.0.0" gameversion="0.15.13.0" installtime="1637918039">
+<contentpackage name="[EN] ChangedMod" corepackage="false" modversion="1.0.0" gameversion="0.15.13.0">
   <Character file="%ModDir%/Characters/WhiteLatex1/Whitelatex1.xml" />
   <Character file="%ModDir%/Characters/HumanWhiteLatex/HumanWhiteLatex.xml" />
   <Character file="%ModDir%/Characters/DarkLatex1/Darklatex1.xml" />
