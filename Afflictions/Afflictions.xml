@@ -1,15 +1,78 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Afflictions>
-  <AfflictionHusk name="Процесс трансфурмации" identifier="transfurwhite" description="Тело пациента покрывают липкие белые пятна." type="alieninfection" targets="human" huskedspeciesname="[speciesname]whitelatex" causeofdeathdescription="Трансфурирован" selfcauseofdeathdescription="Вы обрели новое тело и поддались инстинктам, скоро от вашего разума ничего не останеться." limbspecific="false" indicatorlimb="Torso" activationthreshold="0" showiconthreshold="40" karmachangeonapplied="-1" maxstrength="100" iconcolors="60,140,195,255;60,107,195,255;60,0,195,255">
-    <Effect minstrength="0" maxstrength="100" maxvitalitydecrease="0" strengthchange="10" />
-    <icon texture="Content/UI/MainIconsAtlas.png" sourcerect="0,640,128,128" color="60,107,195,255" origin="0,0" />
+  <AfflictionHusk 
+    name="Transfurmation"
+    identifier="transfurwhite"
+    description="Spots of sticky white goo are spreading rapidly across the skin."
+    type="alieninfection"
+    targets="human"
+    huskedspeciesname="[speciesname]whitelatex"
+    causeofdeathdescription="Transfurred"
+    selfcauseofdeathdescription="Your body has been entirely consumed by the latex."
+    limbspecific="false" indicatorlimb="Torso"
+    
+    activationthreshold="0"
+    showiconthreshold="50"
+    showinhealthscannerthreshold="25"
+
+    dormantthreshold="50"
+    activethreshold="75"
+    transitionthreshold="100"
+
+    karmachangeonapplied="-1"
+    maxstrength="100"
+    transferbuffs="true"
+    iconcolors="60,140,195,255;60,107,195,255;60,0,195,255"
+    healableinmedicalclinic="false">
+      <Effect minstrength="0" maxstrength="100" maxvitalitydecrease="0" strengthchange="10" />
+      <icon texture="Content/UI/MainIconsAtlas.png" sourcerect="0,640,128,128" color="60,107,195,255" origin="0,0" />
   </AfflictionHusk>
-  <AfflictionHusk name="Процесс трансфурмации" identifier="transfurdark" description="Тело пациента покрывают липкие темные пятна." type="alieninfection" targets="human" huskedspeciesname="[speciesname]darklatex" causeofdeathdescription="Трансфурирован" selfcauseofdeathdescription="Вы обрели новое тело и поддались инстинктам, скоро от вашего разума ничего не останеться." limbspecific="false" indicatorlimb="Torso" activationthreshold="0" showiconthreshold="40" karmachangeonapplied="-1" maxstrength="300" iconcolors="60,140,195,255;60,107,195,255;60,0,195,255">
-    <Effect minstrength="0" maxstrength="100" maxvitalitydecrease="0" strengthchange="10" />
-    <icon texture="Content/UI/MainIconsAtlas.png" sourcerect="0,640,128,128" color="60,107,195,255" origin="0,0" />
+  <!-- name = "transfurmation" -->
+  <!-- description = "The patient's body is covered in sticky white goo."-->
+  <!-- cause of death description = "Transfurred" -->
+  <!-- lit self cause of death = "You have found a new body and succumbed to your instincts, soon there will be nothing left of your mind." -->
+  <AfflictionHusk 
+    name="Transfurmation"
+    identifier="transfurwhite"
+    description="Spots of sticky black goo are spreading rapidly across the skin."
+    type="alieninfection"
+    targets="human"
+    huskedspeciesname="[speciesname]darklatex"
+    causeofdeathdescription="Transfurred"
+    selfcauseofdeathdescription="Your mind has been overcome by the white latex, and your body is now following."
+    limbspecific="false" indicatorlimb="Torso"
+    
+    activationthreshold="0"
+    showiconthreshold="50"
+    showinhealthscannerthreshold="25"
+
+    dormantthreshold="50"
+    activethreshold="75"
+    transitionthreshold="100"
+
+    karmachangeonapplied="-1"
+    maxstrength="100"
+    transferbuffs="true"
+    iconcolors="60,140,195,255;60,107,195,255;60,0,195,255"
+    healableinmedicalclinic="false">
+      <Effect minstrength="0" maxstrength="100" maxvitalitydecrease="0" strengthchange="10" />
+      <icon texture="Content/UI/MainIconsAtlas.png" sourcerect="0,640,128,128" color="60,107,195,255" origin="0,0" />
   </AfflictionHusk>
-  <Affliction name="Устойчивость к трансфурмации" identifier="transfurresistance" description="На время вы неуязвимы к воздействию латекса любого типа." type="resistance" isbuff="true" limbspecific="false" maxstrength="600">
-    <Effect minstrength="0" maxstrength="600" strengthchange="-1" resistancefor="transfurwhite,transfurdark" minresistance="1" maxresistance="100" />
-    <icon texture="Content/UI/MainIconsAtlas.png" sourcerect="384,896,128,128" color="10,193,114,255" origin="0,0" />
+  <!-- name = "transfurmation" -->
+  <!-- description = "The patient's body is covered in sticky black goo."-->
+  <Affliction
+    name="Transfurmation Resistance"
+    identifier="transfurresistance"
+    description="You're invulnerable to latex... for now."
+    
+    type="resistance" isbuff="true"
+
+    limbspecific="false" indicatorlimb="Torso"
+    
+    maxstrength="600">
+      <Effect minstrength="0" maxstrength="600" strengthchange="-1" resistancefor="transfurwhite,transfurdark" minresistance="1" maxresistance="100" />
+      <icon texture="Content/UI/MainIconsAtlas.png" sourcerect="384,896,128,128" color="10,193,114,255" origin="0,0" />
   </Affliction>
+  <!-- name = "transfurmation resistance " -->
+  <!-- description = "You are temporarily invulnerable to latex." -->
 </Afflictions>
