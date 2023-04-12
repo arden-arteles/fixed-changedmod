@@ -152,11 +152,12 @@
       </StatusEffect>
     </Projectile>
   </Latexide>
-  <Item
-  name="Protogen Visor" identifier="protogenhelmet"
-  category="Equipment" tags="smallitem,clothing" cargocontaineridentifier="metalcrate"
-  description="Latexide woven into the fur around this helmet prevents latex from reaching the wearer's brain. Won't protect your body." 
-  scale="0.5">
+  
+  <Item identifier="protogenhelmet"
+  name="Protogen Helmet"
+  description="Latexide woven into the fur around this helmet prevents latex from reaching the wearer's brain. Won't protect your body."
+  
+  category="Equipment" tags="smallitem,clothing" cargocontaineridentifier="metalcrate" scale="0.5">
 
     <PreferredContainer primary="crewcab" minamount="0" maxamount="1" spawnprobability="0.125" />
     <PreferredContainer primary="outpostcrewcabinet" minamount="1" maxamount="1" spawnprobability="0.125" />
@@ -191,7 +192,11 @@
     </Wearable>
   </Item>
   <!-- UNIFORMS START -->
-  <Item name="Костюм протогена ассистента" identifier="protogensuitassistant" category="Equipment" tags="smallitem,clothing" fireproof="false" cargocontaineridentifier="metalcrate" description="" scale="0.5" impactsoundtag="impact_soft">
+  <Item identifier="protogensuitassistant"
+  name="Assistant's Protogen Suit"  
+  description="A warm outfit protecting the wearer from swift death by bodily latex contact."
+  
+  category="Equipment" tags="smallitem,clothing" fireproof="false" cargocontaineridentifier="metalcrate" scale="0.5" impactsoundtag="impact_soft">
     <Price baseprice="1500">
       <Price locationtype="outpost" multiplier="1" minavailable="0" />
       <Price locationtype="city" multiplier="0.9" minavailable="0" />
@@ -221,7 +226,11 @@
       <damagemodifier afflictionidentifiers="transfurdark,transfurwhite" armorsector="0.0,360.0" damagemultiplier="0" />
     </Wearable>
   </Item>
-  <Item name="Mechanic's Protogen Suit" identifier="protogensuitmech" category="Equipment" tags="smallitem,clothing" fireproof="false" cargocontaineridentifier="metalcrate" description="" scale="0.5" impactsoundtag="impact_soft">
+  <Item identifier="protogensuitmech"
+  name="Mechanic's Protogen Suit"
+  description="A warm outfit protecting the wearer from swift death by bodily latex contact."
+  
+  category="Equipment" tags="smallitem,clothing" fireproof="false" cargocontaineridentifier="metalcrate" scale="0.5" impactsoundtag="impact_soft">
     <Price baseprice="1500">
       <Price locationtype="outpost" multiplier="1.2" minavailable="0" />
       <Price locationtype="city" multiplier="0.9" minavailable="0" />
@@ -251,7 +260,11 @@
       <damagemodifier afflictionidentifiers="transfurdark,transfurwhite" armorsector="0.0,360.0" damagemultiplier="0" />
     </Wearable>
   </Item>
-  <Item name="Костюм протогена инженера" identifier="protogensuitengi" category="Equipment" tags="smallitem,clothing" fireproof="false" cargocontaineridentifier="metalcrate" description="" scale="0.5" impactsoundtag="impact_soft">
+  <Item identifier="protogensuitengi"
+  name="Engineer's Protogen Suit" 
+  description="A warm outfit protecting the wearer from swift death by bodily latex contact."
+
+  category="Equipment" tags="smallitem,clothing" fireproof="false" cargocontaineridentifier="metalcrate" scale="0.5" impactsoundtag="impact_soft">
     <Price baseprice="1500">
       <Price locationtype="outpost" multiplier="1" minavailable="0" />
       <Price locationtype="city" multiplier="0.9" minavailable="0" />
@@ -281,7 +294,11 @@
       <damagemodifier afflictionidentifiers="transfurdark,transfurwhite" armorsector="0.0,360.0" damagemultiplier="0" />
     </Wearable>
   </Item>
-  <Item name="Костюм протогена врача" identifier="protogensuitmed" category="Equipment" tags="smallitem,clothing" fireproof="false" cargocontaineridentifier="metalcrate" description="" scale="0.5" impactsoundtag="impact_soft">
+  <Item identifier="protogensuitmed"
+  name="Doctor's Protogen Suit" 
+  description="A warm outfit protecting the wearer from swift death by bodily latex contact."
+  
+  category="Equipment" tags="smallitem,clothing" fireproof="false" cargocontaineridentifier="metalcrate" scale="0.5" impactsoundtag="impact_soft">
     <Price baseprice="1500">
       <Price locationtype="outpost" multiplier="1" minavailable="0" />
       <Price locationtype="city" multiplier="0.9" minavailable="0" />
@@ -311,7 +328,11 @@
       <damagemodifier afflictionidentifiers="transfurdark,transfurwhite" armorsector="0.0,360.0" damagemultiplier="0" />
     </Wearable>
   </Item>
-  <Item name="Костюм протогена офицера" identifier="protogensuitsb" category="Equipment" tags="smallitem,clothing" fireproof="false" cargocontaineridentifier="metalcrate" description="" scale="0.5" impactsoundtag="impact_soft">
+  <Item identifier="protogensuitsb"
+  name="Guard's Protogen Suit" 
+  description="A warm outfit protecting the wearer from swift death by bodily latex contact."
+  
+  category="Equipment" tags="smallitem,clothing" fireproof="false" cargocontaineridentifier="metalcrate" scale="0.5" impactsoundtag="impact_soft">
     <Price baseprice="1500">
       <Price locationtype="outpost" multiplier="1" minavailable="0" />
       <Price locationtype="city" multiplier="0.9" minavailable="0" />
@@ -341,7 +362,11 @@
       <damagemodifier afflictionidentifiers="transfurdark,transfurwhite" armorsector="0.0,360.0" damagemultiplier="0" />
     </Wearable>
   </Item>
-  <Item name="Костюм протогена капитана" identifier="protogensuitcap" category="Equipment" tags="smallitem,clothing" fireproof="false" cargocontaineridentifier="metalcrate" description="" scale="0.5" impactsoundtag="impact_soft">
+  <Item identifier="protogensuitcap"
+  name="Captain's Protogen Suit" 
+  description="A warm outfit protecting the wearer from swift death by bodily latex contact."
+  
+  category="Equipment" tags="smallitem,clothing" fireproof="false" cargocontaineridentifier="metalcrate" scale="0.5" impactsoundtag="impact_soft">
     <Price baseprice="1500">
       <Price locationtype="outpost" multiplier="1" minavailable="0" />
       <Price locationtype="city" multiplier="0.9" minavailable="0" />
