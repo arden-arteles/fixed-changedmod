@@ -7,7 +7,7 @@
     <damagemodifier damagemultiplier="0.5" armorsector="0,360" deflectprojectiles="False" afflictionidentifiers="gunshotwound,lacerations" damagesound="" afflictiontypes="" probabilitymultiplier="1" damageparticle="" />
     <attack structuresoundtype="StructureBlunt" context="Any" targettype="Character" targetlimbtype="None" hitdetectiontype="Distance" afterattack="FollowThrough" afterattackdelay="0" reverse="False" retreat="False" range="0" damagerange="0" duration="0.25" cooldown="5" secondarycooldown="0" cooldownrandomfactor="0" fullspeedafterattack="False" structuredamage="0" itemdamage="0" penetration="0" levelwalldamage="0" ranged="False" avoidfriendlyfire="False" requiredangle="20" stun="0" onlyhumans="False" applyforceonlimbs="" force="0" rootforceworldstart="0,0" rootforceworldmiddle="0,0" rootforceworldend="0,0" roottransitioneasing="Linear" torque="0" applyforcesonlyonce="False" targetimpulse="0" targetimpulseworld="0,0" targetforce="0" targetforceworld="0,0" submarineimpactmultiplier="1" severlimbsprobability="0" priority="0" blink="False">
       <affliction identifier="organdamage" strength="5" probability="1" />
-      <affliction identifier="transfurdark" strength="1" probability="1" />
+      <affliction identifier="transfurwhite" strength="1" probability="1" />
     </attack>
   </limb>
   <!-- body -->
@@ -16,7 +16,7 @@
     <damagemodifier damagemultiplier="0.5" armorsector="0,360" deflectprojectiles="False" afflictionidentifiers="gunshotwound,lacerations" damagesound="" afflictiontypes="" probabilitymultiplier="1" damageparticle="" />
   <attack structuresoundtype="StructureBlunt" context="Any" targettype="Character" targetlimbtype="Torso" hitdetectiontype="Distance" afterattack="FollowThrough" afterattackdelay="0.5" reverse="False" retreat="False" range="10" damagerange="10" duration="0.25" cooldown="1" secondarycooldown="1" cooldownrandomfactor="0" fullspeedafterattack="False" structuredamage="100" itemdamage="0" penetration="0" levelwalldamage="0" ranged="False" avoidfriendlyfire="False" requiredangle="20" stun="0" onlyhumans="True" applyforceonlimbs="" force="1" rootforceworldstart="0,0" rootforceworldmiddle="0,0" rootforceworldend="0,0" roottransitioneasing="Linear" torque="0" applyforcesonlyonce="False" targetimpulse="0" targetimpulseworld="0,0" targetforce="0" targetforceworld="0,0" submarineimpactmultiplier="1" severlimbsprobability="1.5000002" priority="1" blink="False">
       
-      <affliction identifier="transfurdark" strength="1" probability="1" />
+      <affliction identifier="transfurwhite" strength="1" probability="1" />
     </attack>
   <limb id="12" radius="13" mass="20" type="Waist" healthindex="0" name="Limb 12" flip="True" attackpriority="1" steerforce="0" stepoffset="0,0" height="0" width="0" density="10" pullpos="0,0" refjoint="-1" ignorecollisions="False" notes="" friction="0.3" restitution="0.05" spriteorientation="NaN" mirrorvertically="False" mirrorhorizontally="False" hide="False" angulardamping="7" mouthpos="0,0" constanttorque="0" constantangle="0" scale="1" attackforcemultiplier="1" minseverancedamage="1" severedfadeouttime="10" applytailangle="False" sinefrequencymultiplier="1" sineamplitudemultiplier="1" blinkfrequency="0" blinkdurationin="0.2" blinkdurationout="0.5" blinkholdtime="0" blinkrotationin="0" blinkrotationout="45" blinkforce="50" blinktransitionin="Linear" blinktransitionout="Linear">
     <sprite texture="Mods/ChangedMod/Characters/WLHLegs.png" sourcerect="0,1,98,90" depth="0.11" origin="0.4897959,0.6111111" color="255,255,255,255" deadcolor="255,255,255,255" deadcolortime="0" />
@@ -31,7 +31,7 @@
     <sprite texture="Mods/ChangedMod/Characters/WLHTorso.png" sourcerect="197,128,59,128" depth="0.16" origin="0.4576271,0.484375" color="255,255,255,255" deadcolor="255,255,255,255" deadcolortime="0" />
     <damagemodifier damagemultiplier="0.5" armorsector="0,360" deflectprojectiles="False" afflictionidentifiers="gunshotwound,lacerations" damagesound="" afflictiontypes="" probabilitymultiplier="1" damageparticle="" />
     <attack structuresoundtype="StructureBlunt" context="Any" targettype="Character" targetlimbtype="Torso" hitdetectiontype="Distance" afterattack="FollowThrough" afterattackdelay="0" reverse="False" retreat="False" range="10" damagerange="10" duration="0.25" cooldown="5" secondarycooldown="0" cooldownrandomfactor="0" fullspeedafterattack="False" structuredamage="10" itemdamage="10" penetration="0" levelwalldamage="0" ranged="False" avoidfriendlyfire="False" requiredangle="20" stun="0" onlyhumans="False" applyforceonlimbs="" force="1" rootforceworldstart="0,0" rootforceworldmiddle="0,0" rootforceworldend="0,0" roottransitioneasing="Linear" torque="0" applyforcesonlyonce="False" targetimpulse="0" targetimpulseworld="0,0" targetforce="0" targetforceworld="0,0" submarineimpactmultiplier="1" severlimbsprobability="0" priority="0" blink="False">
-      <affliction identifier="transfurdark" strength="5" probability="1" />
+      <affliction identifier="transfurwhite" strength="5" probability="1" />
       
     </attack>
   </limb>
@@ -45,7 +45,7 @@
     <damagemodifier damagemultiplier="0.5" armorsector="0,360" deflectprojectiles="False" afflictionidentifiers="gunshotwound,lacerations" damagesound="" afflictiontypes="" probabilitymultiplier="1" damageparticle="" />
     <attack structuresoundtype="StructureBlunt" context="Any" targettype="Character" targetlimbtype="Torso" hitdetectiontype="Distance" afterattack="FollowThrough" afterattackdelay="0.5" reverse="False" retreat="False" range="10" damagerange="10" duration="0.25" cooldown="1" secondarycooldown="1" cooldownrandomfactor="0" fullspeedafterattack="False" structuredamage="100" itemdamage="0" penetration="0" levelwalldamage="0" ranged="False" avoidfriendlyfire="False" requiredangle="20" stun="0" onlyhumans="True" applyforceonlimbs="" force="1" rootforceworldstart="0,0" rootforceworldmiddle="0,0" rootforceworldend="0,0" roottransitioneasing="Linear" torque="0" applyforcesonlyonce="False" targetimpulse="0" targetimpulseworld="0,0" targetforce="0" targetforceworld="0,0" submarineimpactmultiplier="1" severlimbsprobability="1.5000002" priority="1" blink="False">
       
-      <affliction identifier="transfurdark" strength="1" probability="1" />
+      <affliction identifier="transfurwhite" strength="1" probability="1" />
     </attack>
   </limb>
   <!-- left leg -->

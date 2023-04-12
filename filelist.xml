@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<contentpackage name="[EN] ChangedMod" corepackage="false" modversion="1.0.0" gameversion="0.15.13.0">
+<contentpackage name="[Fixed] ChangedMod" corepackage="false" modversion="1.0.0" gameversion="0.15.13.0">
   <Character file="%ModDir%/Characters/WhiteLatex1/Whitelatex1.xml" />
   <Character file="%ModDir%/Characters/HumanWhiteLatex/HumanWhiteLatex.xml" />
   <Character file="%ModDir%/Characters/DarkLatex1/Darklatex1.xml" />
@@ -98,4 +98,6 @@
   <None file="%ModDir%/Characters/WhiteLatex1/Animations/WhiteLatex1Crouch.xml" />
   <None file="%ModDir%/Characters/HumanDarkLatex/Animations/HumanDarkLatexCrouch.xml" />
   <None file="%ModDir%/Characters/DLHTorsoHuman.png" />
+  <!-- Translations -->
+  <Text file="%ModDir%/Content/Texts/English/EnglishAfflictions.xml" />
 </contentpackage>
