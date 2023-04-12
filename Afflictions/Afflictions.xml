@@ -3,7 +3,7 @@
   <AfflictionHusk 
     name="Transfurmation"
     identifier="transfurwhite"
-    description="Spots of sticky white goo are spreading rapidly across the skin."
+    description="White goo is racing up the body, looking for a point of entry to the brain."
     type="alieninfection"
     targets="human"
     huskedspeciesname="[speciesname]whitelatex"
@@ -33,8 +33,8 @@
   <!-- lit self cause of death = "You have found a new body and succumbed to your instincts, soon there will be nothing left of your mind." -->
   <AfflictionHusk 
     name="Transfurmation"
-    identifier="transfurwhite"
-    description="Spots of sticky black goo are spreading rapidly across the skin."
+    identifier="transfurdark"
+    description="A dark goo is rapidly enveloping your lower body."
     type="alieninfection"
     targets="human"
     huskedspeciesname="[speciesname]darklatex"
@@ -63,7 +63,7 @@
   <Affliction
     name="Transfurmation Resistance"
     identifier="transfurresistance"
-    description="You're invulnerable to latex... for now."
+    description="The latexide being secreted from your body repels latex that comes into contact with you."
     
     type="resistance" isbuff="true"
 

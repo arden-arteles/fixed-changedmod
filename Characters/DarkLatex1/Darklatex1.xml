@@ -1,7 +1,16 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Character speciesname="DarkLatex1" humanoid="True" speciestranslationoverride="" displayname="Тёмный Латекс" group="" hasinfo="False" husk="False" usehuskappendage="False" needsair="False" needswater="False" canspeak="False" usebosshealthbar="False" noise="100" visibility="100" blooddecal="blood" bleedparticleair="blooddrop" bleedparticlewater="waterblood" bleedparticlemultiplier="1" eatingspeed="10" pathfinderpriority="1" hideinsonar="True" sonardisruption="0" distantsonarrange="0" disabledistance="25000" caninteract="False" caneat="True" usepathfinding="True" hideinthermalgoggles="False" soundinterval="10">
+<Character 
+speciesname="DarkLatex1" humanoid="True" 
+speciestranslationoverride="" 
+displayname="Dark Latex Creature" 
+group="" hasinfo="False" husk="False" usehuskappendage="False" 
+needsair="False" needswater="False" canspeak="False" 
+usebosshealthbar="False" noise="100" visibility="100" 
+blooddecal="blood" bleedparticleair="blooddrop" bleedparticlewater="waterblood" bleedparticlemultiplier="1" 
+eatingspeed="10" pathfinderpriority="1" hideinsonar="True" sonardisruption="0" distantsonarrange="0" 
+disabledistance="25000" caninteract="False" caneat="True" usepathfinding="True" hideinthermalgoggles="False" soundinterval="10">
   <ragdolls folder="%ModDir%/Characters/DarkLatex1/Ragdolls/" />
-  <huskappendage affliction="transfurwhite" path="%ModDir%/Characters/DarkLatex1/Transfurmation.xml" />
+  <huskappendage affliction="transfurdark" path="%ModDir%/Characters/DarkLatex1/Transfurmation.xml" />
   <animations folder="%ModDir%/Characters/DarkLatex1/Animations/" />
   <health vitality="100" doesbleed="False" crushdepth="-Infinity" usehealthwindow="False" bleedingreduction="0" burnreduction="0" constanthealthregeneration="0" healthregenerationwheneating="10" stunimmunity="False" applyafflictioncolors="False" />
   <ai combatstrength="250" sight="1" hearing="1" aggressiveboarding="True" attackwhenprovoked="True" aggressiongreed="5" aggressionhurt="150" canopendoors="True" targetouterwalls="False" fleehealththreshold="0" avoidgunfire="True" avoidtime="3" minfleetime="20" enforceaggressivebehaviorformissions="True" randomattack="False" avoidabyss="True" stayinabyss="False" startaggression="0" maxaggression="100" aggressioncumulation="0" walltargetingmethod="Target" keepdoorsclosed="False" patrolflooded="False" patroldry="False">
@@ -15,6 +24,6 @@
   <sound file="%ModDir%/Characters/DarkLatex1/Sounds/Poison.ogg" state="Die" range="1000" volume="1" gender="None" />
   <sound file="%ModDir%/Characters/DarkLatex1/Sounds/Poison.ogg" state="Damage" range="1000" volume="1" gender="None" />
   <Inventory slots="Any, Any" accessiblewhenalive="False" commonness="2">
-    <Item identifier="DaLaCr" />
+    <Item identifier="darklatexcrystal" />
   </Inventory>
 </Character>

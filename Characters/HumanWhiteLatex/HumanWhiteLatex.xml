@@ -48,6 +48,6 @@
   <sound file="%ModDir%/Characters/WhiteLatex1/Sounds/Poison.ogg" state="Die" range="1000" volume="1" gender="None" />
   <sound file="%ModDir%/Characters/WhiteLatex1/Sounds/Poison.ogg" state="Damage" range="1000" volume="1" gender="None" />
   <Inventory slots="Any, Any" accessiblewhenalive="False" commonness="2">
-    <Item identifier="DaLaCr" />
+    <Item identifier="darklatexcrystal" />
   </Inventory>
 </Character>
