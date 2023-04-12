@@ -1,5 +1,14 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Character speciesname="HumanDarkLatex" displayname="" husk="True" humanoid="True" hasinfo="True" usehuskappendage="True" needsair="False" genders="true" canspeak="False" blooddecal="blood" group="husk" speciestranslationoverride="" needswater="False" noise="100" visibility="100" bleedparticleair="blooddrop" bleedparticlewater="waterblood" bleedparticlemultiplier="1" eatingspeed="10" pathfinderpriority="1" hideinsonar="False" sonardisruption="0" disabledistance="25000" usebosshealthbar="False" distantsonarrange="0">
+<Character speciesname="HumanDarkLatex" 
+displayname="" humanoid="True" hasinfo="True" genders="true" 
+husk="True" usehuskappendage="True" 
+canspeak="False" caninteract="True"
+needsair="False" needswater="False" 
+group="husk" speciestranslationoverride="" noise="100" visibility="100" 
+blooddecal="blood" bleedparticleair="blooddrop" bleedparticlewater="waterblood" bleedparticlemultiplier="1" 
+eatingspeed="10" pathfinderpriority="1" 
+hideinsonar="False" sonardisruption="0" disabledistance="25000" usebosshealthbar="False" 
+distantsonarrange="0">
   <ragdolls folder="%ModDir%/Characters/HumanDarklatex/Ragdolls/" />
   <animations folder="%ModDir%/Characters/HumanDarklatex/Animations/" />
   <huskappendage affliction="transfurdark" path="%ModDir%/Characters/HumanDarkLatex/Transfurmation.xml" />

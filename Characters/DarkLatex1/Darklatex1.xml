@@ -1,14 +1,13 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Character 
-speciesname="DarkLatex1" humanoid="True" 
-speciestranslationoverride="" 
+<Character speciesname="DarkLatex1" humanoid="True" group="" 
+speciestranslationoverride="" hasinfo="False"
 displayname="Dark Latex Creature" 
-group="" hasinfo="False" husk="False" usehuskappendage="False" 
+husk="False" usehuskappendage="False" 
 needsair="False" needswater="False" canspeak="False" 
 usebosshealthbar="False" noise="100" visibility="100" 
 blooddecal="blood" bleedparticleair="blooddrop" bleedparticlewater="waterblood" bleedparticlemultiplier="1" 
 eatingspeed="10" pathfinderpriority="1" hideinsonar="True" sonardisruption="0" distantsonarrange="0" 
-disabledistance="25000" caninteract="False" caneat="True" usepathfinding="True" hideinthermalgoggles="False" soundinterval="10">
+disabledistance="25000" caninteract="True" caneat="True" usepathfinding="True" hideinthermalgoggles="False" soundinterval="10">
   <ragdolls folder="%ModDir%/Characters/DarkLatex1/Ragdolls/" />
   <huskappendage affliction="transfurdark" path="%ModDir%/Characters/DarkLatex1/Transfurmation.xml" />
   <animations folder="%ModDir%/Characters/DarkLatex1/Animations/" />
