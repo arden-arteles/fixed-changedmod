@@ -1,6 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Items>
-  <Item name="Кристалл черного латекса" identifier="DaLaCr" category="Equipment" maxstacksize="1" Tags="smallitem,tool" cargocontaineridentifier="metalcrate" Scale="0.5" impactsoundtag="impact_metal_light">
+  <Item
+  name="Dark Latex Crystal"
+  identifier="dark-latex-crystal"
+  category="Equipment" maxstacksize="1" Tags="smallitem,tool"
+  cargocontaineridentifier="metalcrate" Scale="0.5" impactsoundtag="impact_metal_light">
     <Price baseprice="250">
       <Price locationtype="outpost" multiplier="1" minavailable="1" />
       <Price locationtype="city" multiplier="0.9" minavailable="3" />
@@ -22,7 +26,13 @@
     <aitarget sightrange="500" soundrange="250" fadeouttime="1" />
     <Upgrade gameversion="0.10.0.0" scale="0.5" />
   </Item>
-  <Latexide name="Латексид" identifier="latexide" category="Material" maxstacksize="8" cargocontaineridentifier="mediccrate" Tags="smallitem,chem,medical,syringe" description="Этот препарат используется при заражении латексом. ПРИМИЧАНИЕ: ИСПОЛЬЗОВАТЬ БЫСТРО И ОПЕРАТИВНО СРАЗУ ПОСЛЕ ЗАРАЖЕНИЯ!!!" useinhealthinterface="true" scale="0.5" impactsoundtag="impact_metal_light">
+
+  <Latexide
+  name="Latexide"
+  identifier="latexide"
+  category="Material" maxstacksize="8" cargocontaineridentifier="mediccrate" Tags="smallitem,chem,medical,syringe"
+  description="Этот препарат используется при заражении латексом. ПРИМИЧАНИЕ: ИСПОЛЬЗОВАТЬ БЫСТРО И ОПЕРАТИВНО СРАЗУ ПОСЛЕ ЗАРАЖЕНИЯ!!!"
+  useinhealthinterface="true" scale="0.5" impactsoundtag="impact_metal_light">
     <Upgrade gameversion="0.10.0.0" scale="0.5" />
     <PreferredContainer primary="wreckmedcab" minamount="0" maxamount="4" spawnprobability="0.5" />
     <Price baseprice="750">
@@ -34,7 +44,7 @@
     </Price>
     <Fabricate suitablefabricators="medicalfabricator" requiredtime="30">
       <RequiredSkill identifier="medical" level="35" />
-      <RequiredItem identifier="DaLaCr" />
+      <RequiredItem identifier="dark-latex-crystal" />
       <RequiredItem identifier="antibiotics" />
       <RequiredItem identifier="stabilozine" />
     </Fabricate>
@@ -142,23 +152,42 @@
       </StatusEffect>
     </Projectile>
   </Latexide>
-  <Item name="Шлем протогена" identifier="protogenhelmet" category="Equipment" tags="smallitem,clothing" cargocontaineridentifier="metalcrate" description="" scale="0">
+  <Item
+  name="Protogen Visor" identifier="protogenhelmet"
+  category="Equipment" tags="smallitem,clothing" cargocontaineridentifier="metalcrate"
+  description="Latexide woven into the fur around this helmet prevents latex from reaching the wearer's brain. Won't protect your body." 
+  scale="0.5">
+
     <PreferredContainer primary="crewcab" minamount="0" maxamount="1" spawnprobability="0.125" />
     <PreferredContainer primary="outpostcrewcabinet" minamount="1" maxamount="1" spawnprobability="0.125" />
+
     <Price baseprice="500">
-      <Price locationtype="outpost" multiplier="1" minavailable="0" />
+      <Price locationtype="outpost" multiplier="1.2" minavailable="0" />
       <Price locationtype="city" multiplier="0.9" minavailable="0" />
       <Price locationtype="research" multiplier="1" minavailable="0" />
       <Price locationtype="military" multiplier="1" minavailable="0" />
       <Price locationtype="mine" multiplier="1" minavailable="0" />
     </Price>
+
     <Deconstruct time="10" />
+
     <InventoryIcon name="Protogen Helmet" texture="%ModDir%/Items/protogenhelmet.png" sourcerect="0,0,128,128" origin="0.5,0.5" />
     <Sprite name="Protogen Helmet" texture="%ModDir%/Items/protogenhelmet.png" depth="0.6" sourcerect="0,0,102,94" origin="0.5,0.5" />
     <Body width="75" height="50" density="30" />
+
     <Wearable limbtype="Head" slots="Any,Head" msg="ItemMsgPickUpSelect">
       <damagemodifier afflictionidentifiers="transfurdark,transfurwhite" armorsector="0.0,360.0" damagemultiplier="0" />
       <sprite name="Protogen Helmet Wearable" texture="%ModDir%/Items/protogenhelmet.png" limb="Head" inheritlimbdepth="true" inherittexturescale="true" hidelimb="true" sourcerect="0,0,128,128" origin="0.5,0.5" />
+      <!--
+      <StatusEffect target="Character" type="OnWearing">
+        <Conditional huskinfection="gt 0" />
+        <ReduceAffliction type="damage" amount="0.25" />
+        <ReduceAffliction type="bleeding" amount="0.1" />
+      </StatusEffect>
+      -->
+      <!--
+        TODO: Following lore, wearing the helmet will make you immune to white latex.
+      -->
     </Wearable>
   </Item>
   <!-- UNIFORMS START -->
@@ -192,13 +221,13 @@
       <damagemodifier afflictionidentifiers="transfurdark,transfurwhite" armorsector="0.0,360.0" damagemultiplier="0" />
     </Wearable>
   </Item>
-  <Item name="Костюм протогена механика" identifier="protogensuitmech" category="Equipment" tags="smallitem,clothing" fireproof="false" cargocontaineridentifier="metalcrate" description="" scale="0.5" impactsoundtag="impact_soft">
+  <Item name="Mechanic's Protogen Suit" identifier="protogensuitmech" category="Equipment" tags="smallitem,clothing" fireproof="false" cargocontaineridentifier="metalcrate" description="" scale="0.5" impactsoundtag="impact_soft">
     <Price baseprice="1500">
-      <Price locationtype="outpost" multiplier="1" minavailable="0" />
+      <Price locationtype="outpost" multiplier="1.2" minavailable="0" />
       <Price locationtype="city" multiplier="0.9" minavailable="0" />
       <Price locationtype="research" multiplier="1" minavailable="0" />
       <Price locationtype="military" multiplier="1" minavailable="0" />
-      <Price locationtype="mine" multiplier="1" minavailable="0" />
+      <Price locationtype="mine" multiplier="0.85" minavailable="0" />
     </Price>
     <Deconstruct time="10" />
     <InventoryIcon name="Protogen Suit  Mechanic Icon" texture="%ModDir%/Items/protogensuit_mech_icon.png" sourcerect="0,0,128,128" origin="0.5,0.5" />
