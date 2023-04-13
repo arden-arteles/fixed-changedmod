@@ -1,8 +1,42 @@
 <?xml version="1.0" encoding="utf-8"?>
 <infotexts language="English" nowhitespace="false" translatedname="English">
 
+<!-- Creatures -->
+
+
+
+<!-- Items -->
+
+<entityname.DeLaCr>Dark Latex Crystal</entityname.DeLaCr>
+<entitydescription.DeLaCr></entitydescription.DeLaCr>
+
+<entityname.latexide>Latexide</entityname.latexide>
+<entitydescription.latexide>Used for latex infections, especially preemptively. The window to act after infection is very short.</entitydescription.latexide>
+
+<entityname.protogenhelmet>Protogen Helmet</entityname.protogenhelmet>
+<entitydescription.protogenhelmet>Latexide woven into the fur around this helmet prevents latex from reaching the wearer's brain. Won't protect your body.</entitydescription.protogenhelmet>
+
+<entityname.protogensuitassistant>Assistant's Protogen Suit</entityname.protogensuitassistant>
+<entitydescription.protogensuitassistant>A warm outfit protecting the wearer from swift death by bodily latex contact.</entitydescription.protogensuitassistant>
+
+<entityname.protogensuitmech>Mechanic's Protogen Suit</entityname.protogensuitmech>
+<entitydescription.protogensuitmech>A warm outfit protecting the wearer from swift death by bodily latex contact.</entitydescription.protogensuitmech>
+
+<entityname.protogensuitengi>Engineer's Protogen Suit</entityname.protogensuitengi>
+<entitydescription.protogensuitengi>A warm outfit protecting the wearer from swift death by bodily latex contact.</entitydescription.protogensuitengi>
+
+<entityname.protogensuitmed>Doctor's Protogen Suit</entityname.protogensuitmed>
+<entitydescription.protogensuitmed>A warm outfit protecting the wearer from swift death by bodily latex contact.</entitydescription.protogensuitmed>
+
+<entityname.protogensuitsb>Guard's Protogen Suit</entityname.protogensuitsb>
+<entitydescription.protogensuitsb>A warm outfit protecting the wearer from swift death by bodily latex contact.</entitydescription.protogensuitsb>
+
+<entityname.protogensuitcap>Captain's Protogen Suit</entityname.protogensuitcap>
+<entitydescription.protogensuitcap>A warm outfit protecting the wearer from swift death by bodily latex contact.</entitydescription.protogensuitcap>
+
 <!-- Afflictions -->
-<afflictionname.transfurdark>Transfurreence (Black)</afflictionname.transfurdark>
+
+<afflictionname.transfurdark>Transfurrence (Black)</afflictionname.transfurdark>
 <afflictiondescription.transfurdark>A black goo is rapidly enveloping the lower body.</afflictiondescription.transfurdark>
 <afflictiondescription.transfurdark.fatal>The black goo is incorporating the body. Nothing can be done.</afflictiondescription.transfurdark.fatal>
 <causeofdeath.transfurdark>Transfurred by black latex.</causeofdeath.transfurdark>

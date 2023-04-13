@@ -1,8 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Items>
-  <Item
+  <Item identifier="DeLaCr"
   name="Dark Latex Crystal"
-  identifier="darklatexcrystal"
+  description=""
+  
   category="Equipment" maxstacksize="1" Tags="smallitem,tool"
   cargocontaineridentifier="metalcrate" Scale="0.5" impactsoundtag="impact_metal_light">
     <Price baseprice="250">
@@ -27,11 +28,11 @@
     <Upgrade gameversion="0.10.0.0" scale="0.5" />
   </Item>
 
-  <Latexide
-  name="Latexide"
-  identifier="latexide"
+  <Latexide identifier="latexide"
+  name=""
+  description=""
+
   category="Material" maxstacksize="8" cargocontaineridentifier="mediccrate" Tags="smallitem,chem,medical,syringe"
-  description="Этот препарат используется при заражении латексом. ПРИМИЧАНИЕ: ИСПОЛЬЗОВАТЬ БЫСТРО И ОПЕРАТИВНО СРАЗУ ПОСЛЕ ЗАРАЖЕНИЯ!!!"
   useinhealthinterface="true" scale="0.5" impactsoundtag="impact_metal_light">
     <Upgrade gameversion="0.10.0.0" scale="0.5" />
     <PreferredContainer primary="wreckmedcab" minamount="0" maxamount="4" spawnprobability="0.5" />
@@ -44,7 +45,7 @@
     </Price>
     <Fabricate suitablefabricators="medicalfabricator" requiredtime="30">
       <RequiredSkill identifier="medical" level="35" />
-      <RequiredItem identifier="darklatexcrystal" />
+      <RequiredItem identifier="DeLaCr" />
       <RequiredItem identifier="antibiotics" />
       <RequiredItem identifier="stabilozine" />
     </Fabricate>
@@ -154,8 +155,8 @@
   </Latexide>
   
   <Item identifier="protogenhelmet"
-  name="Protogen Helmet"
-  description="Latexide woven into the fur around this helmet prevents latex from reaching the wearer's brain. Won't protect your body."
+  name=""
+  description=""
   
   category="Equipment" tags="smallitem,clothing" cargocontaineridentifier="metalcrate" scale="0.5">
 
@@ -186,15 +187,12 @@
         <ReduceAffliction type="bleeding" amount="0.1" />
       </StatusEffect>
       -->
-      <!--
-        TODO: Following lore, wearing the helmet will make you immune to white latex.
-      -->
     </Wearable>
   </Item>
   <!-- UNIFORMS START -->
   <Item identifier="protogensuitassistant"
-  name="Assistant's Protogen Suit"  
-  description="A warm outfit protecting the wearer from swift death by bodily latex contact."
+  name=""  
+  description=""
   
   category="Equipment" tags="smallitem,clothing" fireproof="false" cargocontaineridentifier="metalcrate" scale="0.5" impactsoundtag="impact_soft">
     <Price baseprice="1500">
@@ -227,8 +225,8 @@
     </Wearable>
   </Item>
   <Item identifier="protogensuitmech"
-  name="Mechanic's Protogen Suit"
-  description="A warm outfit protecting the wearer from swift death by bodily latex contact."
+  name=""
+  description=""
   
   category="Equipment" tags="smallitem,clothing" fireproof="false" cargocontaineridentifier="metalcrate" scale="0.5" impactsoundtag="impact_soft">
     <Price baseprice="1500">
@@ -261,8 +259,8 @@
     </Wearable>
   </Item>
   <Item identifier="protogensuitengi"
-  name="Engineer's Protogen Suit" 
-  description="A warm outfit protecting the wearer from swift death by bodily latex contact."
+  name="" 
+  description=""
 
   category="Equipment" tags="smallitem,clothing" fireproof="false" cargocontaineridentifier="metalcrate" scale="0.5" impactsoundtag="impact_soft">
     <Price baseprice="1500">
@@ -295,8 +293,8 @@
     </Wearable>
   </Item>
   <Item identifier="protogensuitmed"
-  name="Doctor's Protogen Suit" 
-  description="A warm outfit protecting the wearer from swift death by bodily latex contact."
+  name="" 
+  description=""
   
   category="Equipment" tags="smallitem,clothing" fireproof="false" cargocontaineridentifier="metalcrate" scale="0.5" impactsoundtag="impact_soft">
     <Price baseprice="1500">
@@ -329,8 +327,8 @@
     </Wearable>
   </Item>
   <Item identifier="protogensuitsb"
-  name="Guard's Protogen Suit" 
-  description="A warm outfit protecting the wearer from swift death by bodily latex contact."
+  name="" 
+  description=""
   
   category="Equipment" tags="smallitem,clothing" fireproof="false" cargocontaineridentifier="metalcrate" scale="0.5" impactsoundtag="impact_soft">
     <Price baseprice="1500">
@@ -363,8 +361,8 @@
     </Wearable>
   </Item>
   <Item identifier="protogensuitcap"
-  name="Captain's Protogen Suit" 
-  description="A warm outfit protecting the wearer from swift death by bodily latex contact."
+  name="" 
+  description=""
   
   category="Equipment" tags="smallitem,clothing" fireproof="false" cargocontaineridentifier="metalcrate" scale="0.5" impactsoundtag="impact_soft">
     <Price baseprice="1500">
