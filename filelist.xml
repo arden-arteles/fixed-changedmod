@@ -99,5 +99,5 @@
   <None file="%ModDir%/Characters/HumanDarkLatex/Animations/HumanDarkLatexCrouch.xml" />
   <None file="%ModDir%/Characters/DLHTorsoHuman.png" />
   <!-- Translations -->
-  <Text file="%ModDir%/Content/Texts/English/EnglishAfflictions.xml" />
+  <Text file="%ModDir%/Content/Texts/English/English.xml" />
 </contentpackage>

@@ -1,7 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Character speciesname="DarkLatex1" humanoid="True" group="" 
+<Character speciesname="DarkLatex1"
+humanoid="True" group="" 
 speciestranslationoverride="" hasinfo="False"
+
 displayname="Dark Latex Creature" 
+
 husk="False" usehuskappendage="False" 
 needsair="False" needswater="False" canspeak="False" 
 usebosshealthbar="False" noise="100" visibility="100" 

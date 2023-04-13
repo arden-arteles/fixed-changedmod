@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<infotexts language="English" nowhitespace="false" translatedname="English">
+
+<!-- Afflictions -->
+<afflictionname.transfurdark>Transfurreence (Black)</afflictionname.transfurdark>
+<afflictiondescription.transfurdark>A black goo is rapidly enveloping the lower body.</afflictiondescription.transfurdark>
+<afflictiondescription.transfurdark.fatal>The black goo is incorporating the body. Nothing can be done.</afflictiondescription.transfurdark.fatal>
+<causeofdeath.transfurdark>Transfurred by black latex.</causeofdeath.transfurdark>
+<causeofdeathself.transfurdark>Your body has been completely consumed by the black latex.</causeofdeathself.transfurdark>
+
+<afflictionname.transfurwhite>Transfurrence (White)</afflictionname.transfurwhite>
+<afflictiondescription.transfurwhite>White goo is racing up the body, looking for a point of entry to the brain.</afflictiondescription.transfurwhite>
+<afflictiondescription.transfurwhite.fatal>The white goo is pouring in through the nostrils. Nothing can be done.</afflictiondescription.transfurwhite.fatal>
+<causeofdeath.transfurwhite>Transfurred by white latex.</causeofdeath.transfurwhite>
+<causeofdeathself.transfurwhite>Your brain has been pacified by the presence in your mind, and you relax as you let it take control.</causeofdeathself.transfurwhite>
+
+<afflictionname.transfurresistance>Transfurmation Resistance</afflictionname.transfurresistance>
+<afflictiondescription.transfurresistance>The latexide being secreted from your body repels latex that comes into contact with you.</afflictiondescription.transfurresistance>
+</infotexts>
