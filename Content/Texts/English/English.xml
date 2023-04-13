@@ -3,7 +3,13 @@
 
 <!-- Creatures -->
 
+<character.DarkLatex1>Dark Latex Creature</character.DarkLatex1>
+<character.WhiteLatex1>White Latex Creature</character.WhiteLatex1>
 
+<!-- Translation overridden (I think?)
+    <character.HumanDarkLatex>Transfurred Dark Latex Creature</character.HumanDarkLatex>
+    <character.HumanWhiteLatex>Transfurred White Latex Creature</character.HumanWhiteLatex>
+-->
 
 <!-- Items -->
 

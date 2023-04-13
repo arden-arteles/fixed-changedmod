@@ -4,7 +4,7 @@ displayname="" humanoid="True" hasinfo="True" genders="true"
 husk="True" usehuskappendage="True" 
 canspeak="False" caninteract="True"
 needsair="False" needswater="False" 
-group="husk" speciestranslationoverride="" noise="100" visibility="100" 
+group="husk" speciestranslationoverride="DarkLatex1" noise="100" visibility="100" 
 blooddecal="blood" bleedparticleair="blooddrop" bleedparticlewater="waterblood" bleedparticlemultiplier="1" 
 eatingspeed="10" pathfinderpriority="1" 
 hideinsonar="False" sonardisruption="0" disabledistance="25000" usebosshealthbar="False" 
@@ -12,7 +12,7 @@ distantsonarrange="0">
   <ragdolls folder="%ModDir%/Characters/HumanDarklatex/Ragdolls/" />
   <animations folder="%ModDir%/Characters/HumanDarklatex/Animations/" />
   <huskappendage affliction="transfurdark" path="%ModDir%/Characters/HumanDarkLatex/Transfurmation.xml" />
-  <health usehealthwindow="True" vitality="50" crushdepth="-Infinity" doesbleed="False" bleedingreduction="0" burnreduction="0" constanthealthregeneration="0" healthregenerationwheneating="0">
+  <health usehealthwindow="True" vitality="50" crushdepth="Infinity" doesbleed="False" bleedingreduction="0" burnreduction="0" constanthealthregeneration="0" healthregenerationwheneating="0">
     <MedUISilhouette texture="Content/UI/Health/MedUI_Silhouette.png" columns="8" rows="2" sourcerect="0,0,1008,748" />
     <MedUIExtra texture="Content/UI/Health/MedUIExtra.png" columns="4" rows="4" sourcerect="0,0,1024,1024" />
     <Limb name="Head">

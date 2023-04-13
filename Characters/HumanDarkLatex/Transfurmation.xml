@@ -1,4 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- LMAO IT REPLACES THE ENTIRE BODY IMMEDIATELY -->
 <huskappenage>
   <!-- left arm -->
   <limb id="17" radius="8" height="20" mass="3" type="LeftArm" healthindex="0" name="Limb 2" flip="True" attackpriority="1" steerforce="0" stepoffset="0,0" width="0" density="10" pullpos="0,0" refjoint="-1" ignorecollisions="False" notes="" friction="0.3" restitution="0.05" spriteorientation="NaN" mirrorvertically="False" mirrorhorizontally="False" hide="False" angulardamping="7" mouthpos="0,0" constanttorque="0" constantangle="0" scale="1" attackforcemultiplier="1" minseverancedamage="1" severedfadeouttime="10" applytailangle="False" sinefrequencymultiplier="1" sineamplitudemultiplier="1" blinkfrequency="0" blinkdurationin="0.2" blinkdurationout="0.5" blinkholdtime="0" blinkrotationin="0" blinkrotationout="45" blinkforce="50" blinktransitionin="Linear" blinktransitionout="Linear">

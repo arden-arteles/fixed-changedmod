@@ -1,9 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Character speciesname="HumanWhiteLatex" caninteract="True" displayname="" husk="True" humanoid="True" hasinfo="True" usehuskappendage="True" needsair="False" genders="true" canspeak="False" blooddecal="blood" group="husk" speciestranslationoverride="" needswater="False" noise="100" visibility="100" bleedparticleair="blooddrop" bleedparticlewater="waterblood" bleedparticlemultiplier="1" eatingspeed="10" pathfinderpriority="1" hideinsonar="False" sonardisruption="0" disabledistance="25000" usebosshealthbar="False" distantsonarrange="0">
+<Character speciesname="HumanWhiteLatex" displayname="" group="husk" 
+caninteract="True" husk="True" usehuskappendage="True" 
+humanoid="True" hasinfo="True" needsair="False" genders="true" canspeak="False" 
+blooddecal="blood" speciestranslationoverride="WhiteLatex1" needswater="False" noise="100" visibility="100" bleedparticleair="blooddrop" bleedparticlewater="waterblood" bleedparticlemultiplier="1" eatingspeed="10" pathfinderpriority="1" hideinsonar="False" sonardisruption="0" disabledistance="25000" usebosshealthbar="False" distantsonarrange="0">
   <ragdolls folder="%ModDir%/Characters/HumanWhitelatex/Ragdolls/" />
   <animations folder="%ModDir%/Characters/HumanWhitelatex/Animations/" />
   <huskappendage affliction="transfurwhite" path="%ModDir%/Characters/HumanWhiteLatex/Transfurmation.xml" />
-  <health usehealthwindow="True" vitality="50" crushdepth="-Infinity" doesbleed="False" bleedingreduction="0" burnreduction="0" constanthealthregeneration="0" healthregenerationwheneating="0">
+  <health usehealthwindow="True" vitality="50" crushdepth="Infinity" doesbleed="False" bleedingreduction="0" burnreduction="0" constanthealthregeneration="0" healthregenerationwheneating="0">
     <MedUISilhouette texture="Content/UI/Health/MedUI_Silhouette.png" columns="8" rows="2" sourcerect="0,0,1008,748" />
     <MedUIExtra texture="Content/UI/Health/MedUIExtra.png" columns="4" rows="4" sourcerect="0,0,1024,1024" />
     <Limb name="Head">

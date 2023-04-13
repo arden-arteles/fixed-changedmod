@@ -2,7 +2,7 @@
 <Character 
 speciesname="WhiteLatex1" group=""
 humanoid="True" caninteract="True" 
-speciestranslationoverride="" displayname="White Latex Creature" 
+speciestranslationoverride="" displayname="" 
 hasinfo="False" husk="False" usehuskappendage="False" needsair="False" needswater="False" canspeak="False" 
 usebosshealthbar="False" noise="100" visibility="100" 
 blooddecal="blood" bleedparticleair="blooddrop" bleedparticlewater="waterblood" bleedparticlemultiplier="1" 

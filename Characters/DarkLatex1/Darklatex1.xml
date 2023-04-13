@@ -3,7 +3,7 @@
 humanoid="True" group="" 
 speciestranslationoverride="" hasinfo="False"
 
-displayname="Dark Latex Creature" 
+displayname="" 
 
 husk="False" usehuskappendage="False" 
 needsair="False" needswater="False" canspeak="False" 
@@ -14,7 +14,7 @@ disabledistance="25000" caninteract="True" caneat="True" usepathfinding="True" h
   <ragdolls folder="%ModDir%/Characters/DarkLatex1/Ragdolls/" />
   <huskappendage affliction="transfurdark" path="%ModDir%/Characters/DarkLatex1/Transfurmation.xml" />
   <animations folder="%ModDir%/Characters/DarkLatex1/Animations/" />
-  <health vitality="100" doesbleed="False" crushdepth="-Infinity" usehealthwindow="False" bleedingreduction="0" burnreduction="0" constanthealthregeneration="0" healthregenerationwheneating="10" stunimmunity="False" applyafflictioncolors="False" />
+  <health vitality="100" doesbleed="False" crushdepth="Infinity" usehealthwindow="False" bleedingreduction="0" burnreduction="0" constanthealthregeneration="0" healthregenerationwheneating="10" stunimmunity="False" applyafflictioncolors="False" />
   <ai combatstrength="250" sight="1" hearing="1" aggressiveboarding="True" attackwhenprovoked="True" aggressiongreed="5" aggressionhurt="150" canopendoors="True" targetouterwalls="False" fleehealththreshold="0" avoidgunfire="True" avoidtime="3" minfleetime="20" enforceaggressivebehaviorformissions="True" randomattack="False" avoidabyss="True" stayinabyss="False" startaggression="0" maxaggression="100" aggressioncumulation="0" walltargetingmethod="Target" keepdoorsclosed="False" patrolflooded="False" patroldry="False">
     <target tag="provocative" state="Attack" priority="100" reactdistance="0" attackdistance="0" timer="0" ignorecontained="False" ignoreinside="False" ignoreoutside="False" ignoreifnotinsamesub="False" ignoreincapacitated="True" damagethreshold="0" attackpattern="Straight" sweepdistance="0" sweepstrength="10" sweepspeed="1" circlestartdistance="5000" circlerotationspeed="1" circlestrikedistancemultiplier="5" circlemaxrandomoffset="0" threshold="0" thresholdmin="-1" thresholdmax="-1" offset="0,0" />
     <target tag="human" state="Attack" priority="80" reactdistance="50" ignoreincapacitated="True" attackdistance="10" timer="3" ignorecontained="False" ignoreinside="False" ignoreoutside="False" ignoreifnotinsamesub="False" damagethreshold="0" attackpattern="Straight" sweepdistance="0" sweepstrength="10" sweepspeed="1" circlestartdistance="5000" circlerotationspeed="1" circlestrikedistancemultiplier="5" circlemaxrandomoffset="0" threshold="0" thresholdmin="-1" thresholdmax="-1" offset="0,0" />
